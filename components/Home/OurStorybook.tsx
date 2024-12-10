@@ -13,7 +13,7 @@ import { storybook } from "@/types/home";
 export default function OurStorybook() {
   return (
     <section>
-      <div className="max-w-7xl mx-auto w-full">
+      <div className="max-w-7xl mx-auto w-full px-4">
         <div className="flex flex-col max-md:gap-8 md:flex-row w-full justify-between items-center">
           <div className="text-2xl font-semibold leading-[1.1]">
             Our Storybook

@@ -10,6 +10,7 @@ import {
   SelectItem,
 } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
+import { Metadata } from "next";
 
 export default function Page() {
   return (
@@ -144,3 +145,8 @@ export default function Page() {
     </main>
   );
 }
+
+export const metadata: Metadata = {
+  title: "Contact | Big Bund Media Works",
+  description: "Big Bund Media Works is a digital marketing agency.",
+};

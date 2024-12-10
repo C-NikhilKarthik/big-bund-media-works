@@ -3,6 +3,7 @@ import Landing from "@/components/About/Landing";
 import React from "react";
 import StoryTeller from "@/components/About/story-tellers";
 import Difference from "@/components/About/difference";
+import { Metadata } from "next";
 
 export default function Page() {
   return (
@@ -14,3 +15,8 @@ export default function Page() {
     </main>
   );
 }
+
+export const metadata: Metadata = {
+  title: "About | Big Bund Media Works",
+  description: "Big Bund Media Works is a digital marketing agency.",
+};
