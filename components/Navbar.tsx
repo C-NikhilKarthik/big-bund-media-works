@@ -42,7 +42,7 @@ export default function Navbar() {
       ${pathname === "/" ? "bg-white shadow-[0_4px_4px_0_#FFB22C80]" : "bg-bg3"}
     `}
     >
-      <div className="text-lg font-bold">Logo</div>
+      <div className="text-lg font-bold text-black">Logo</div>
       <div className="md:flex gap-5 xl:gap-12 hidden">
         {links.map((item: linksType, index: number) => (
           <Link

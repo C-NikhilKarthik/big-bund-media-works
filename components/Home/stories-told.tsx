@@ -22,13 +22,33 @@ export default function StoriesTold() {
     <section className="w-full pt-10 relative px-4">
       <GradientBackground />
       <div className="max-w-7xl flex flex-col gap-6 w-full m-auto py-10">
-        <div className="text-lg font-medium text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 50, scale: 0.5 }}
+          animate={{
+            opacity: 1,
+            y: 0,
+            scale: 1,
+          }}
+          viewport={{ amount: 0.2, once: true }} // Trigger animation when 20% is visible
+          transition={{ duration: 0.5 }}
+          className="text-lg font-medium text-center"
+        >
           People don&apos;t buy products.{" "}
           <span className="text-primary1 font-semibold">They buy Stories.</span>
-        </div>
-        <div className="text-xl font-semibold text-center">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 50, scale: 0.5 }}
+          animate={{
+            opacity: 1,
+            y: 0,
+            scale: 1,
+          }}
+          viewport={{ amount: 0.2, once: true }} // Trigger animation when 20% is visible
+          transition={{ duration: 0.5 }}
+          className="text-xl font-semibold text-center"
+        >
           Stories We Tell...
-        </div>
+        </motion.div>
         <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {[...Array(4)].map((_, i) => (
             <motion.div
@@ -36,7 +56,7 @@ export default function StoriesTold() {
               custom={i} // Pass index for stagger effect
               initial="hidden"
               whileInView="visible"
-              viewport={{ amount: 0.2 }} // Trigger animation when 20% is visible
+              viewport={{ amount: 0.2, once: true }} // Trigger animation when 20% is visible
               variants={cardVariants}
             >
               <ProductComponent

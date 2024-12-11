@@ -12,54 +12,74 @@ import {
 } from "react-icons/fa6";
 import { usePathname } from "next/navigation";
 import { linksType } from "@/types/global";
+import { motion } from "framer-motion";
 
 export default function Footer() {
   const pathname = usePathname();
 
   const links: linksType[] = [
-    {
-      text: "Services",
-      href: "/services",
-    },
-    {
-      text: "Pricing",
-      href: "/pricing",
-    },
-    {
-      text: "Projects",
-      href: "/projects",
-    },
-    {
-      text: "About",
-      href: "/about",
-    },
-    {
-      text: "Contact",
-      href: "/contact",
-    },
-    {
-      text: "Testimonials",
-      href: "/testimonials",
-    },
+    { text: "Services", href: "/services" },
+    { text: "Pricing", href: "/pricing" },
+    { text: "Projects", href: "/projects" },
+    { text: "About", href: "/about" },
+    { text: "Contact", href: "/contact" },
+    { text: "Testimonials", href: "/testimonials" },
   ];
+
   return (
-    <footer
+    <motion.footer
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.8 }}
       className={`p-3 md:p-10 bg-bg3 ${pathname === "/contact" && "hidden"} `}
     >
-      <div className="flex flex-col gap-[10px] w-full mx-auto">
-        <div className="bg-white rounded-[20px] px-10 py-6 flex max-md:flex-col max-md:gap-4 justify-between md:items-center">
-          <div className="text-lg font-medium">
-            EXCITED? US TOO. LET&apos;S CREATE YOUR STORY
-          </div>
-          <Link
-            href={"/contact"}
-            className="bg-primary1 text-primary4 flex gap-3 w-fit items-center px-4 py-2 border-[#FFB22C] border-[3px] rounded-lg"
+      <motion.div
+        className="flex flex-col gap-[10px] w-full mx-auto justify-end"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.8 }}
+      >
+        <motion.div
+          className="bg-white rounded-[20px] px-10 py-6 flex max-md:flex-col max-md:gap-4 justify-between md:items-center"
+          initial={{ width: 0 }}
+          whileInView={{ width: "100%" }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 1 }}
+        >
+          <motion.div
+            className="text-lg font-medium"
+            initial={{ y: -20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
           >
-            Schedule a call
-            <BsCameraVideoFill className="text-white text-base" />
-          </Link>
-        </div>
-        <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-[10px]">
+            EXCITED? US TOO. LET&apos;S CREATE YOUR STORY
+          </motion.div>
+          <motion.div
+            initial={{ y: -20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ delay: 0.5, duration: 0.5 }}
+          >
+            <Link
+              href={"/contact"}
+              className="bg-primary1 text-primary4 flex gap-3 w-fit items-center px-4 py-2 border-[#FFB22C] border-[3px] rounded-lg"
+            >
+              Schedule a call
+              <BsCameraVideoFill className="text-white text-base" />
+            </Link>
+          </motion.div>
+        </motion.div>
+
+        <motion.div
+          className="w-full grid grid-cols-1 md:grid-cols-3 gap-[10px]"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ delay: 0.6, duration: 0.8 }}
+        >
           <div className="bg-white flex flex-col items-center gap-4 rounded-[20px] p-10">
             <Image
               className="h-auto w-[10vw]"
@@ -95,23 +115,27 @@ export default function Footer() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="w-full flex gap-4">
-          <div className="basis-1/4 bg-white rounded-lg md:rounded-[20px] p-2 md:p-4 flex items-center">
-            <FaXTwitter className="text-primary1 text-[clamp(24px,4vw,60px)] mx-auto" />
-          </div>
-          <div className="basis-1/4 bg-white rounded-lg md:rounded-[20px] p-2 md:p-4 flex items-center">
-            <FaLinkedinIn className="text-primary1 text-[clamp(24px,4vw,60px)] mx-auto" />
-          </div>
-          <div className="basis-1/4 bg-white rounded-lg md:rounded-[20px] p-2 md:p-4 flex items-center">
-            <FaDribbble className="text-primary1 text-[clamp(24px,4vw,60px)] mx-auto" />
-          </div>
-          <div className="basis-1/4 bg-white rounded-lg md:rounded-[20px] p-2 md:p-4 flex items-center">
-            <FaFacebook className="text-primary1 text-[clamp(24px,4vw,60px)] mx-auto" />
-          </div>
-        </div>
-      </div>
-    </footer>
+        <motion.div
+          className="w-full flex gap-4"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ delay: 0.7, duration: 0.8 }}
+        >
+          {[FaXTwitter, FaLinkedinIn, FaDribbble, FaFacebook].map(
+            (Icon, index) => (
+              <div
+                key={index}
+                className="basis-1/4 bg-white rounded-lg md:rounded-[20px] p-2 md:p-4 flex items-center"
+              >
+                <Icon className="text-primary1 text-[clamp(24px,4vw,60px)] mx-auto" />
+              </div>
+            )
+          )}
+        </motion.div>
+      </motion.div>
+    </motion.footer>
   );
 }

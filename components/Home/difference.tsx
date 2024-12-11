@@ -18,9 +18,19 @@ export default function Difference() {
       <GradientBackground />
 
       <div className="max-w-7xl flex flex-col gap-6 w-full m-auto py-10">
-        <span className="text-primary1 text-2xl text-center font-semibold">
+        <motion.div
+          initial={{ opacity: 0, y: 50, scale: 0.5 }}
+          animate={{
+            opacity: 1,
+            y: 0,
+            scale: 1,
+          }}
+          viewport={{ amount: 0.2, once: true }} // Trigger animation when 20% is visible
+          transition={{ duration: 0.5 }}
+          className="text-primary1 text-2xl text-center font-semibold"
+        >
           The Big Bund Difference
-        </span>
+        </motion.div>
       </div>
 
       <div className="max-w-5xl w-full mx-auto relative">
