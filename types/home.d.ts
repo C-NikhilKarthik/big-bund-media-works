@@ -12,6 +12,15 @@ export interface productComponentType {
   href: string;
 }
 
+export interface storyTelling {
+  _id: string;
+  heading: string;
+  description: string;
+  buttonText: string;
+  buttonHref: string;
+  image: string;
+}
+
 export interface differenceComponentType {
   heading: string;
   subheading: string;
@@ -19,4 +28,26 @@ export interface differenceComponentType {
   text2: string;
   classNameImg?: string;
   image: string;
+}
+
+export interface differences {
+  heading: string;
+  subheading: string;
+  content: string;
+  classNameImg?: string;
+  photoUrl: string;
+}
+
+export interface storyBook {
+  _id: string;
+  text1: string;
+  text2: string;
+  image: string;
+}
+
+export interface consultation {
+  _id: string;
+  index: number;
+  heading: string;
+  text: string;
 }

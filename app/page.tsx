@@ -1,3 +1,4 @@
+import { ClientResults } from "@/components/Home/client-results";
 import Consultation from "@/components/Home/Consultation";
 import Difference from "@/components/Home/difference";
 import LandingSection from "@/components/Home/LandingSection";
@@ -14,6 +15,7 @@ export default function Home() {
       <OurStorybook />
       <StoriesTold />
       <Difference />
+      <ClientResults />
       <Consultation />
       <StoryTelling />
     </div>

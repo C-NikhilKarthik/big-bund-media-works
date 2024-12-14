@@ -1,28 +1,49 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 import CustomButton from "../CustomButton";
 import PulsingBackground from "../pulse";
+import { motion } from "framer-motion";
 
 export default function LandingSection() {
   return (
     <section className="max-w-7xl w-full mx-auto px-4">
       <PulsingBackground />
-      <div className="mx-auto max-w-2xl mb-6 items-center flex flex-col gap-8">
+      <motion.div
+        initial={{ opacity: 0, y: 50, scale: 0.5 }}
+        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.2, duration: 0.7 }}
+        className="mx-auto max-w-2xl mb-6 items-center flex flex-col gap-8"
+      >
         <div className="text-3xl font-medium text-secondary1 text-center leading-[1.1] tracking-tight">
           Creating <span className="text-primary1">Stories</span> Driving Impact
         </div>
 
-        <span className="text-center text-secondary1 w-full max-w-[450px]">
+        <motion.span
+          initial={{ opacity: 0, y: 50, scale: 0.5 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3, duration: 0.7 }}
+          className="text-center text-secondary1 w-full max-w-[450px]"
+        >
           Lorem ipsum dolor sit amet, consectetur.Nibh pharetra ipsum erat
           vulputate tempus. Fringilla.
-        </span>
+        </motion.span>
 
-        <CustomButton
-          href="/contact"
-          className="text-sm py-3 w-fit"
-          text={"Craft your Story"}
-        />
-      </div>
+        <motion.div
+          initial={{ opacity: 0, y: 50, scale: 0.5 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4, duration: 0.7 }}
+        >
+          <CustomButton
+            href="/contact"
+            className="text-sm py-3 w-fit"
+            text={"Craft your Story"}
+          />
+        </motion.div>
+      </motion.div>
       <div className="max-md:grid hidden grid-cols-2 gap-2">
         <Image
           className="w-full h-full object-cover rounded-[22px]"

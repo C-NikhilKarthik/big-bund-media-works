@@ -5,7 +5,7 @@ import React from "react";
 
 export default function Page() {
   return (
-    <main className="pt-20">
+    <main className="pt-20 overflow-x-hidden w-full">
       <Landing />
       <Filters />
     </main>

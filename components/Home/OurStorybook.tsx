@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
@@ -7,10 +8,28 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { stories } from "@/data/Home/our-storybook";
 import Image from "next/image";
-import { storybook } from "@/types/home";
+import { getHomeStorybook } from "@/app/action/home";
+import { storyBook } from "@/types/home";
 export default function OurStorybook() {
+  const [storybook, setStoryBook] = useState<storyBook[]>([]);
+
+  useEffect(() => {
+    async function fetchStorybook() {
+      try {
+        const response = await getHomeStorybook();
+        if (response.success && Array.isArray(response.homeStorybook)) {
+          setStoryBook(response.homeStorybook);
+        } else {
+          console.error("Invalid response format:", response);
+        }
+      } catch (error) {
+        console.error("Error fetching differences:", error);
+      }
+    }
+
+    fetchStorybook();
+  }, []);
   return (
     <section>
       <div className="max-w-7xl mx-auto w-full px-4">
@@ -34,7 +53,7 @@ export default function OurStorybook() {
           className="w-full"
         >
           <CarouselContent>
-            {stories?.map((item: storybook, index: number) => (
+            {storybook?.map((item, index: number) => (
               <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                 <Card className="">
                   <CardContent className="flex border border-border3 aspect-[1.5] relative items-center justify-center rounded-lg !p-0 overflow-clip">
@@ -47,8 +66,8 @@ export default function OurStorybook() {
                       src={item?.image}
                     />
                     <div className="w-full absolute bottom-0 left-0 text-base p-2 flex justify-between items-center bg-gradient-to-r from-bg3 to-bg4">
-                      <span className="">{item?.name1}</span>
-                      <span className="text-gray2">{item?.name2}</span>
+                      <span className="">{item?.text1}</span>
+                      <span className="text-gray2">{item?.text2}</span>
                     </div>
                   </CardContent>
                 </Card>

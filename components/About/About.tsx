@@ -1,11 +1,19 @@
+"use client";
 import Image from "next/image";
 import React from "react";
+import { motion } from "framer-motion";
 
 export default function About() {
   return (
     <section className="w-full">
-      <div className="max-w-7xl w-full mx-auto gap-20 flex max-md:flex-col">
-        <div className="basis-1/2 max-md:basis-full">
+      <div className="max-w-7xl w-full overflow-x-hidden mx-auto gap-20 flex max-md:flex-col">
+        <motion.div
+          initial={{ x: "-100%", opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2, duration: 0.7 }}
+          className="basis-1/2 max-md:basis-full"
+        >
           <div className="text-2xl font-semibold leading-[1.1]">
             About Big Bung
           </div>
@@ -27,8 +35,14 @@ export default function About() {
             Natoque mauris cras molestie velit. Maecenas eget adipiscing quisque
             viverra lectus arcu, tincidunt ultrices pellentesque.
           </div>
-        </div>
-        <div className="basis-1/2 max-md:basis-full">
+        </motion.div>
+        <motion.div
+          initial={{ x: "100%", opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2, duration: 0.7 }}
+          className="basis-1/2 max-md:basis-full"
+        >
           <Image
             className="w-full h-auto"
             alt="About image"
@@ -37,7 +51,7 @@ export default function About() {
             sizes="100%"
             src={"/About/AboutImage.png"}
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   );

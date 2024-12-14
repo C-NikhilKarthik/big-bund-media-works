@@ -40,6 +40,7 @@ export default function Navbar() {
       className={`
       fixed top-0 left-0 w-full px-6 py-4 flex z-[50] justify-between items-center rounded-b-xl
       ${pathname === "/" ? "bg-white shadow-[0_4px_4px_0_#FFB22C80]" : "bg-bg3"}
+      ${pathname.includes("studio") ? "hidden" : ""}
     `}
     >
       <div className="text-lg font-bold text-black">Logo</div>

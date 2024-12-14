@@ -32,7 +32,7 @@ export default function Footer() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.8 }}
-      className={`p-3 md:p-10 bg-bg3 ${pathname === "/contact" && "hidden"} `}
+      className={`p-3 md:p-10 bg-bg3 ${(pathname === "/contact" || pathname.includes("studio")) && "hidden"} `}
     >
       <motion.div
         className="flex flex-col gap-[10px] w-full mx-auto justify-end"

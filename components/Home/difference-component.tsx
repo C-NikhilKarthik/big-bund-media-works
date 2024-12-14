@@ -31,7 +31,7 @@ export default function DifferenceComponent({
         </div>
         <Image
           src={image}
-          className={`${classNameImg || ""} flex-1 object-contain`}
+          className={`${classNameImg || ""} flex-1 object-contain max-md:w-full`}
           alt={"image"}
           height={0}
           width={0}

@@ -7,7 +7,7 @@ import { Metadata } from "next";
 
 export default function Page() {
   return (
-    <main className="w-full pt-32 px-4">
+    <main className="w-full pt-32 px-4 overflow-x-hidden">
       <Landing />
       <About />
       <StoryTeller />
