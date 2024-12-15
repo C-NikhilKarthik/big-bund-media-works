@@ -87,7 +87,7 @@ export default function Page({ params }: PageProps) {
       </section>
 
       <section>
-        <div className="max-w-7xl overflow-hidden mx-auto w-full flex flex-col px-4 space-y-5 items-center">
+        <div className="max-w-8xl overflow-hidden mx-auto w-full flex flex-col px-4 space-y-5 items-center">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}

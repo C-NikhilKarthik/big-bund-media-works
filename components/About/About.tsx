@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 export default function About() {
   return (
     <section className="w-full">
-      <div className="max-w-7xl w-full overflow-x-hidden mx-auto gap-20 flex max-md:flex-col">
+      <div className="max-w-8xl w-full overflow-x-hidden mx-auto gap-20 flex max-md:flex-col">
         <motion.div
           initial={{ x: "-100%", opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}

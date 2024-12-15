@@ -45,7 +45,7 @@ export default function Page() {
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. F. Nibh metus a
         semper purus
       </motion.div>
-      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 gap-x-6 gap-y-8 md:grid-cols-2 lg:grid-cols-3">
+      <div className="max-w-8xl mx-auto w-full grid grid-cols-1 gap-x-6 gap-y-8 md:grid-cols-2 lg:grid-cols-3">
         {storyTellers?.map((item: story_component, index: number) => (
           <Component {...item} key={index} />
         ))}

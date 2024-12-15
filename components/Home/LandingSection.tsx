@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 export default function LandingSection() {
   return (
-    <section className="max-w-7xl w-full mx-auto px-4">
+    <section className="max-w-8xl w-full mx-auto px-4">
       <PulsingBackground />
       <motion.div
         initial={{ opacity: 0, y: 50, scale: 0.5 }}

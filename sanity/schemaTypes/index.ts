@@ -6,6 +6,7 @@ import { homeStorybook } from "./home-storybook";
 import { aboutDifference } from "./about-difference";
 import { aboutStoryTeller } from "./about-storyteller";
 import { portfolio } from "./portfolio";
+import { service } from "./service";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -16,5 +17,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     aboutDifference,
     aboutStoryTeller,
     portfolio,
+    service,
   ],
 };

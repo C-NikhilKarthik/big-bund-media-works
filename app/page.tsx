@@ -5,7 +5,7 @@ import LandingSection from "@/components/Home/LandingSection";
 import OurStorybook from "@/components/Home/OurStorybook";
 import Scroll from "@/components/Home/Scroll";
 import StoriesTold from "@/components/Home/stories-told";
-import StoryTelling from "@/components/Home/story-telling";
+// import StoryTelling from "@/components/Home/story-telling";
 
 export default function Home() {
   return (
@@ -17,7 +17,7 @@ export default function Home() {
       <Difference />
       <ClientResults />
       <Consultation />
-      <StoryTelling />
+      {/* <StoryTelling /> */}
     </div>
   );
 }

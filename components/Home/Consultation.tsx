@@ -42,7 +42,7 @@ export default function Consultation() {
 
   return (
     <div className="bg-bg4 p-14 max-md:p-4">
-      <div className="rounded-[20px] bg-white p-12 max-md:p-4 space-y-20">
+      <div className="rounded-[20px] bg-white max-w-8xl mx-auto p-12 max-md:p-4 space-y-20">
         <motion.div
           initial={{ y: 100, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}

@@ -9,7 +9,7 @@ export default function Landing() {
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.2, duration: 0.7 }}
-        className="text-xl font-semibold px-4 text-gray1 max-w-7xl w-full mx-auto leading-[1.2] text-center"
+        className="text-xl font-semibold px-4 text-gray1 max-w-8xl w-full mx-auto leading-[1.2] text-center"
       >
         EMPOWERING BRANDS WITH PERFORMACE-DRIVEN STORYTELLING THAT RESONATES AND
         DELIVERS RESULTS

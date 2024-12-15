@@ -1,16 +1,18 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import CustomButton from "./CustomButton";
 import { linksType } from "@/types/global";
 import { motion, useCycle } from "framer-motion";
 import { MenuToggle } from "./MenuToggle";
+import { FaAngleDown } from "react-icons/fa";
 
 export default function Navbar() {
   const pathname = usePathname();
   const [open, toggleOpen] = useCycle(false, true);
+  const [servicesOpen, setServicesOpen] = useState(false);
 
   const links: linksType[] = [
     {
@@ -24,6 +26,12 @@ export default function Navbar() {
     {
       text: "Services",
       href: "/services",
+      subLinks: [
+        {
+          text: "Video Production",
+          href: "/services/03994ff1-e3c6-4db5-8360-682516fc5967",
+        },
+      ],
     },
     {
       text: "Portfolio",
@@ -46,18 +54,54 @@ export default function Navbar() {
       <div className="text-lg font-bold text-black">Logo</div>
       <div className="md:flex gap-5 xl:gap-12 hidden">
         {links.map((item: linksType, index: number) => (
-          <Link
-            key={index}
-            href={item.href}
-            className={`text-black font-medium
-              ${
-                pathname === item.href &&
-                "!text-primary1 underline underline-offset-4"
-              }
-            `}
-          >
-            {item.text}
-          </Link>
+          <div key={index} className="relative">
+            <div
+              className="flex items-center"
+              onMouseEnter={() => item.subLinks && setServicesOpen(true)}
+              onMouseLeave={() => item.subLinks && setServicesOpen(false)}
+            >
+              <Link
+                href={item.href}
+                className={`text-black font-medium
+                  ${
+                    pathname === item.href &&
+                    "!text-primary1 underline underline-offset-4"
+                  }
+                `}
+              >
+                {item.text}
+              </Link>
+              {item.subLinks && (
+                // <button
+                //   onClick={() => setServicesOpen(!servicesOpen)}
+                //   className="ml-2"
+                // >
+                //   ▼
+                // </button>
+                <FaAngleDown
+                  onClick={() => setServicesOpen(!servicesOpen)}
+                  className={`ml-2 duration-500 ${servicesOpen ? "transform rotate-180" : ""}`}
+                />
+              )}
+            </div>
+            {item.subLinks && servicesOpen && (
+              <div
+                className="absolute top-full left-0 bg-white shadow-lg rounded-lg border overflow-hidden border-primary1"
+                onMouseEnter={() => setServicesOpen(true)}
+                onMouseLeave={() => setServicesOpen(false)}
+              >
+                {item.subLinks.map((subLink, subIndex) => (
+                  <Link
+                    key={subIndex}
+                    href={subLink.href}
+                    className="block px-4 py-2 whitespace-nowrap text-black hover:bg-bg3 "
+                  >
+                    {subLink.text}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
         ))}
       </div>
       <CustomButton
@@ -97,13 +141,40 @@ export default function Navbar() {
           >
             <div className="flex flex-col items-center gap-6">
               {links.map((navItem, i) => (
-                <Link
-                  key={i}
-                  href={navItem.href}
-                  className={`justify-center font-light flex`}
-                >
-                  {navItem.text}
-                </Link>
+                <div key={i} className="relative">
+                  <div className="flex items-center">
+                    <Link
+                      href={navItem.href}
+                      className={`justify-center font-light flex`}
+                      onClick={() =>
+                        navItem.subLinks && setServicesOpen(!servicesOpen)
+                      }
+                    >
+                      {navItem.text}
+                    </Link>
+                    {navItem.subLinks && (
+                      <button
+                        onClick={() => setServicesOpen(!servicesOpen)}
+                        className="ml-2"
+                      >
+                        ▼
+                      </button>
+                    )}
+                  </div>
+                  {navItem.subLinks && servicesOpen && (
+                    <div className="flex flex-col items-center mt-2">
+                      {navItem.subLinks.map((subLink, subIndex) => (
+                        <Link
+                          key={subIndex}
+                          href={subLink.href}
+                          className="block px-4 py-2 text-black hover:bg-gray-200"
+                        >
+                          {subLink.text}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
               ))}
             </div>
           </motion.div>

@@ -19,7 +19,7 @@ export default function CustomButton({
         bg-primary1 
         text-primary4 
         px-4 
-        py-2 
+        py-3 
         border-[#FFB22C] 
         border-[3px] 
         rounded-lg 

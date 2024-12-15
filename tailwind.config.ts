@@ -9,6 +9,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      maxWidth: {
+        "8xl": "82rem",
+      },
       colors: {
         primary1: "#FF7E2A",
         primary2: "#FFDE4E",

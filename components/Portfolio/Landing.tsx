@@ -9,7 +9,7 @@ export default function Landing() {
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.2, duration: 0.7 }}
-        className="max-w-7xl text-center leading-[1.3] mx-auto text-3xl font-bold"
+        className="max-w-8xl text-center leading-[1.3] mx-auto text-lg md:text-3xl font-bold"
       >
         <div className="">
           The <span className="text-primary1">Stories</span> we&apos;ve said -

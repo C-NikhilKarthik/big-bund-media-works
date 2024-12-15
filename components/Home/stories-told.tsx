@@ -42,7 +42,7 @@ export default function StoriesTold() {
   return (
     <section className="w-full pt-10 relative px-4">
       <GradientBackground />
-      <div className="max-w-7xl flex flex-col gap-6 w-full m-auto py-10">
+      <div className="max-w-8xl flex flex-col gap-6 w-full m-auto py-10">
         <motion.div
           initial={{ y: 100, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}

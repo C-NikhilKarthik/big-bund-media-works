@@ -12,12 +12,14 @@ export default function DifferenceComponent({
   image,
 }: differenceComponentType) {
   return (
-    <div className="w-full rounded-[12px] bg-gradient-to-br from-button-secondary h-full md:h-[50vh] to-button-primary p-1">
-      <div className="flex max-md:flex-col h-full w-full rounded-[12px] bg-gradient-to-br p-6 gap-6 from-white to-bg3">
-        <div className="w-full flex-1 flex flex-col justify-between">
+    <div className="w-full rounded-[12px] bg-gradient-to-br from-button-secondary h-full to-button-primary p-1">
+      <div className="grid grid-cols-2 max-md:grid-cols-1 h-full w-full rounded-[12px] bg-gradient-to-br p-6 gap-6 from-white to-bg3">
+        <div className="w-full flex flex-col justify-between">
           <div className="flex flex-col gap-4">
             <div className="font-medium text-primary1 uppercase">{heading}</div>
-            <div className="font-semibold text-xl">{subheading}</div>
+            <div className="font-semibold text-xl leading-[1.1]">
+              {subheading}
+            </div>
             <div className="text-gray2">{text1}</div>
             <div className="text-gray2">{text2}</div>
           </div>
@@ -31,7 +33,7 @@ export default function DifferenceComponent({
         </div>
         <Image
           src={image}
-          className={`${classNameImg || ""} flex-1 object-contain max-md:w-full`}
+          className={`${classNameImg || ""} w-full h-auto object-contain`}
           alt={"image"}
           height={0}
           width={0}
