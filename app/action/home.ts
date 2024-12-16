@@ -30,6 +30,27 @@ export async function getHomeDifferences() {
   }
 }
 
+export async function getHomeClientResults() {
+  try {
+    const clientResults = await client.fetch(`*[_type == "home-clientResults"]{
+      _id,
+      heading1,
+      heading2,
+      description1,
+      description2,
+      name,
+      "companyLogoUrl": company.asset->url,
+      "imageUrl": image.asset->url,
+      link
+  }`);
+
+    return { success: true, clientResults };
+  } catch (error: any) {
+    console.error("Error fetching home clientResults:", error);
+    return { success: false, error: error.message };
+  }
+}
+
 export async function getHomeStorybook() {
   try {
     const homeStorybook = await client.fetch(`*[_type == "home-storybook"]{

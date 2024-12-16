@@ -141,7 +141,7 @@ export default function Navbar() {
           >
             <div className="flex flex-col items-center gap-6">
               {links.map((navItem, i) => (
-                <div key={i} className="relative">
+                <div key={i} className="relative flex flex-col items-center">
                   <div className="flex items-center">
                     <Link
                       href={navItem.href}
@@ -153,12 +153,10 @@ export default function Navbar() {
                       {navItem.text}
                     </Link>
                     {navItem.subLinks && (
-                      <button
+                      <FaAngleDown
                         onClick={() => setServicesOpen(!servicesOpen)}
-                        className="ml-2"
-                      >
-                        ▼
-                      </button>
+                        className={`ml-2 duration-500 ${servicesOpen ? "transform rotate-180" : ""}`}
+                      />
                     )}
                   </div>
                   {navItem.subLinks && servicesOpen && (
@@ -167,7 +165,7 @@ export default function Navbar() {
                         <Link
                           key={subIndex}
                           href={subLink.href}
-                          className="block px-4 py-2 text-black hover:bg-gray-200"
+                          className="block px-4 pt-3 text-black hover:bg-gray-200"
                         >
                           {subLink.text}
                         </Link>

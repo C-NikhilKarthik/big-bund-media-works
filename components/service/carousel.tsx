@@ -28,13 +28,13 @@ const Carousel: React.FC<PropType> = (props) => {
           {slides?.map((data, index) => (
             <div className="embla__slide" key={index}>
               <div
-                className={`embla__slide__number h-full ${index % 2 ? "flex-row-reverse" : ""}`}
+                className={`embla__slide__number h-full ${index % 2 ? "md:flex-row-reverse" : ""}`}
               >
                 <div
                   className={`bg-bg3 flex-1 flex h-full ${index % 2 === 0 ? "justify-end" : ""}`}
                 >
                   <div
-                    className={`flex-1 relative flex items-center h-full py-4 ${index % 2 !== 0 ? "justify-end" : ""} flex-col max-w-3xl justify-between pl-16`}
+                    className={`flex-1 relative flex items-center h-full py-4 ${index % 2 !== 0 ? "justify-end" : ""} flex-col max-w-3xl justify-between  pl-8 md:pl-16`}
                   >
                     <div className="text-primary1 text-base w-fit">
                       {data.heading}
@@ -53,7 +53,7 @@ const Carousel: React.FC<PropType> = (props) => {
                   className={`bg-primary3 flex-1 flex h-full ${index % 2 !== 0 ? "justify-end" : ""}`}
                 >
                   <div
-                    className={`flex-1 relative text-base w-full font-normal h-full ${index % 2 !== 0 ? "pr-16" : "pl-16"} items-center py-4 flex max-w-3xl justify-between`}
+                    className={`flex-1 relative text-sm md:text-base w-full font-normal h-full ${index % 2 !== 0 ? "pl-10 md:pr-16" : "pl-10 md:pl-16"} items-center py-4 flex max-w-3xl justify-between`}
                   >
                     {data?.description}
                   </div>

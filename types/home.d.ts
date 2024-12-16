@@ -4,6 +4,18 @@ export interface storybook {
   name2: string;
 }
 
+export interface HomeClientResult {
+  _id: string; // Sanity document ID
+  heading1: string;
+  heading2: string;
+  description1: string;
+  description2: string;
+  name: string;
+  companyLogoUrl: string;
+  imageUrl: string;
+  link: string;
+}
+
 export interface productComponentType {
   image: string;
   heading: string;

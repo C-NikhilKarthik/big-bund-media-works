@@ -58,7 +58,7 @@ export default function Page({ params }: PageProps) {
 
   return (
     <main>
-      <section className="bg-white pt-32 py-20 max-w-8xl overflow-x-hidden mx-auto w-full flex gap-10 space-y-5 px-4">
+      <section className="bg-white pt-32 py-20 max-w-8xl overflow-x-hidden mx-auto w-full flex max-md:flex-col gap-10 space-y-5 px-4">
         <motion.div
           initial={{ opacity: 0, x: "-100%" }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -115,7 +115,7 @@ export default function Page({ params }: PageProps) {
           </motion.div>
         </div>
       </section>
-      <section className="bg-bg3 py-20 space-y-5">
+      <section className="bg-bg3 py-20 space-y-5 px-4">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -135,7 +135,7 @@ export default function Page({ params }: PageProps) {
         >
           {service?.sectionDescription}
         </motion.div>
-        <div className="w-full max-w-5xl px-4 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="w-full max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {service?.sectionCards?.map((data, i) => (
             <motion.div
               key={i}
@@ -162,7 +162,7 @@ export default function Page({ params }: PageProps) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.4, duration: 0.7 }}
-          className="text-xl font-semibold leading-[1.1] w-1/2"
+          className="text-xl font-semibold leading-[1.1] md:w-1/2"
         >
           <span className="text-primary1">{service?.section2Title1} </span>
           {service?.section2Title2}
@@ -212,7 +212,7 @@ export default function Page({ params }: PageProps) {
               ))}
           </motion.div>
         </div>
-        <div className="flex justify-between !mt-20 max-w-5xl mx-auto">
+        <div className="flex max-md:flex-col gap-4 justify-between !mt-20 max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, x: "-100%" }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -243,7 +243,7 @@ export default function Page({ params }: PageProps) {
               width={0}
               height={0}
               sizes="100%"
-              className="w-auto h-full"
+              className="w-auto h-full max-md:mx-auto"
             />
           </motion.div>
         </div>
@@ -251,7 +251,7 @@ export default function Page({ params }: PageProps) {
 
       <Carousel slides={service?.section4} options={OPTIONS} />
 
-      <div className="flex justify-center items-center">
+      <div className="flex max-md:flex-col px-4 pb-10 justify-center items-center">
         <motion.div
           initial={{ opacity: 0, x: "-100%" }}
           whileInView={{ opacity: 1, x: 0 }}
