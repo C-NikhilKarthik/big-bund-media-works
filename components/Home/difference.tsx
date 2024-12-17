@@ -136,7 +136,7 @@ const DifferencePage = () => {
           transition={{ delay: 0.2, duration: 0.7 }}
           className="text-primary1 text-2xl text-center font-semibold"
         >
-          The Big Bund Difference
+          The Big Bung Difference
         </motion.div>
       </div>
       <div className="mx-auto max-w-8xl w-full">
